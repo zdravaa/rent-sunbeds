@@ -1,0 +1,33 @@
+<mat-grid-list [cols]="4" gutterSize="20px">
+    <mat-grid-tile *ngFor="let sunbed of sunbeds">
+        <div class="offer-card">
+            <div *ngIf="sunbed.zone == 'A'">
+                <h3>Polluce - {{sunbed.number}}</h3>
+                <p>Varnished wooden frame, nuts and bolts of stainless steel, “textilene” canvas of PVC - fabric, backrest adjustable to 4 positions, equipped with side table, rear wheels.</p>
+                <b>{{sunbed.price}}$/day</b>
+                <br><br>
+                <img src="../../assets/images/sunbed-light1.jpg" style="width:100%">
+            </div>
+            
+            <div *ngIf="sunbed.zone == 'B'">
+                <h3>Ulisse VIP - {{sunbed.number}}</h3>
+                <p>Anodized wooden frame with or without sunshade, nuts and bolts of stainless steel, “textilene” canvas of PVC - fabric, backrest adjustable to 3 positions.  </p>
+                <b>{{sunbed.price}}$/day</b>
+                <br><br>
+                <img src="../../assets/images/sunbed-light2.jpg" style="width:100%">
+            </div>
+            
+
+            <div *ngIf="sunbed.status != 'booked'" class="sunbed-pic">
+                    <button class="sunbed-button" mat-raised-button color="primary" (click)="bookSunbed(sunbed.id)">Book a sunbed</button>
+            </div>
+            <div *ngIf="sunbed.status == 'booked'" class="sunbed-pic">
+                    <button class="sunbed-button2" mat-raised-button color="primary" (click)="cancelReservation(sunbed.id)">Cancel reservation</button>
+            </div>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<!-- <div *ngFor="let reservation of reservations">
+        <div>Ima maila, i to je: {{email}} {{reservationEmail}}</div>
+    </div> -->

@@ -1,0 +1,153 @@
+.offer-card {
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 300px;
+  transition: 0.3s;
+  position: relative;
+  background: #d5f4e6;
+  border: 1px solid lightgrey;
+  cursor: pointer;
+}
+
+.offer-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.offer-card .content {
+  padding: 0 10px 0 10px;
+}
+
+hr {
+  background-color: #b8b8b8;
+  color: #b8b8b8;
+  border: #b8b8b8;
+  height: 1px;
+}
+
+.offer-card h4 {
+  font-size: 17px;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+.offer-card .img-badge {
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  left: -8%;
+  top: -7%;
+}
+
+.offer-card p {
+  font-size: 14px;
+  color: #999;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+.offer-card .count {
+  position: absolute;
+  padding: 10px 20px 10px 20px;
+  margin-top: -65px;
+  width: 55%;
+  text-align: center;
+  filter: alpha(opacity=90);
+  /* IE */
+  -moz-opacity: 0.90;
+  /* Mozilla */
+  opacity: 0.90;
+  /* Opera */
+  color: white;
+  font-size: 15px;
+}
+
+.offer-card .sunbed-button {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 24.5%;
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.offer-card .sunbed-button2 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 16.5%;
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.inactive {
+  background-color: black;
+}
+
+.active {
+  background-color: white;
+}
+
+.lastminute {
+  background-color: #c2185b;
+}
+
+.soon {
+  background-color: #009fd9;
+}
+
+.filter {
+  margin-top: 25px;
+  margin-bottom: -10px;
+  padding: 0 10px 0 10px;
+  font-size: 14px;
+  line-height: 15px;
+}
+
+.offer-card .msg {
+  position: absolute;
+  padding: 10px 20px 10px 20px;
+  margin-top: 20px;
+  margin-left: 65%;
+  width: 10%;
+  text-align: center;
+  filter: alpha(opacity=90);
+  /* IE */
+  -moz-opacity: 0.90;
+  /* Mozilla */
+  opacity: 0.90;
+  /* Opera */
+  color: white;
+  font-size: 14px;
+  background-color: white;
+  text-transform: uppercase;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform: -webkit-translate(-50%, -50%);
+  transform: -moz-translate(-50%, -50%);
+  transform: -ms-translate(-50%, -50%);
+  color:darkred;
+  max-height: 150px;
+}
+
+.filterMsg {
+  position: relative;
+  left: 10%;
+}
+
+.btn-centered {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  color: white;
+}
+
+.textDecoration {
+  text-decoration: none !important;
+  color: inherit;
+}

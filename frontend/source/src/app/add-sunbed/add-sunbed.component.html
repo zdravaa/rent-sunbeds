@@ -1,0 +1,16 @@
+<mat-form-field appearance="fill">
+    <mat-label>Number</mat-label>
+        <input matInput [(ngModel)]="number">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Select zone</mat-label>
+    <mat-select [(ngModel)]="zone">
+        <mat-option value="A">A</mat-option>
+        <mat-option value="B">B</mat-option>
+    </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Price</mat-label>
+    <textarea matInput [(ngModel)]="price"></textarea>
+</mat-form-field>
+<button class="sunbed-button2" mat-raised-button color="primary" (click)="addSunbed()">Create</button>

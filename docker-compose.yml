@@ -1,0 +1,50 @@
+version: '3'
+#ime servisa
+services:
+  db:
+    #build - kako stvoriti image za container
+    build: ./Database-Service
+    command: --default-authentication-plugin=mysql_native_password
+    container_name: mysqldb
+    volumes:
+      - mysql-data:/var/lib/mysql
+    ports:
+      - '3500:3306'
+  backend:
+    build: backend
+    ports:
+      - '8081:3000'
+    volumes:
+      - ./backend/src:/nodeapp/src
+    depends_on:
+      - db
+    environment:
+      - DATABASE_NAME=rent-sunbed
+      - DATABASE_USER=root
+      - DATABASE_PASSWORD=123456
+      - DATABASE_HOST=db
+      - RABBITMQ_HOST=myrabbitmq
+      - RABBITMQ_PORT=5672
+      - REDIS_HOST=redis-store
+      - REDIS_PORT=6379
+      - APP_PORT=3000
+    restart: on-failure
+  redis-store:
+    image: "redis:6"
+    ports:
+    #port hosta / port containera
+      - "6380:6379"
+    expose:
+      - 6379
+  frontend:
+    build: frontend
+    ports:
+      - '8082:4200'
+    volumes:
+      - ./frontend/source/src:/nodeapp/source/src
+    depends_on:
+      - backend
+    expose:
+      - 4200
+volumes:
+  mysql-data:
